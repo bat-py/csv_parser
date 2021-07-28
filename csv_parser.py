@@ -25,8 +25,9 @@ with open(file, 'r', encoding='latin1') as red:
 for date in dates:
     multi_column_items = date[multi_column].split(',')
     for i in multi_column_items:
-        date[multi_column] = i
-        parsed_dates.append(date)
+        new_date = date.copy()
+        new_date[multi_column] = i
+        parsed_dates.append(new_date)
         
 
 #write pardes dates to file 'parsed_dates.csv'
